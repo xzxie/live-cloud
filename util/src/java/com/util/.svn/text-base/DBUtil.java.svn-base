@@ -27,6 +27,21 @@ public class DBUtil {
 	private static final Log slow = LogFactory.getLog("slowLog");
 	private static final Log error = LogFactory.getLog("errorLog");
 	
+	// 使用ThreadLocal保存Connection变量
+	public static ThreadLocal<Connection> connThreadLocal = new ThreadLocal<Connection>();
+	
+	/*public static Connection getConnection() {
+		// 如果connThreadLocal没有本线程对应的Connection创建一个新的Connection,并将其保存到线程本地变量中
+		if (connThreadLocal.get() == null) {
+			Connection conn = getConn();
+			connThreadLocal.set(conn);
+			return conn;
+		} else {
+			return connThreadLocal.get();
+		}
+	}*/
+	
+	// 获取连接
 	public static Connection getConnection() {
 		Connection conn = null;
 		try {
@@ -36,6 +51,29 @@ public class DBUtil {
 			logger.warn(log() + "连接失败......");
 		}
 		return conn;
+	}
+	
+	// 开启事务(jdbc事务)
+	public static void beginTransaction(Connection conn) {
+		try {
+			if (conn.getAutoCommit()) {
+				conn.setAutoCommit(false);
+			}
+		} catch(SQLException e) {
+			logger.error("开启事务失败.");
+		}
+		
+	}
+	
+	// 提交事务(jdbc事务)
+	public static void commitTransaction(Connection conn) {
+		try {
+			if (!conn.getAutoCommit()) {
+				conn.commit();
+			}
+		} catch(SQLException e) {
+			logger.error("提交事务失败.");
+		}
 	}
 	
 	public static List<Map<String, Object>> executeQuery(String sql) {

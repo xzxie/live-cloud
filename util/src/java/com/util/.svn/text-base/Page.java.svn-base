@@ -2,30 +2,44 @@ package com.util;
 
 public class Page {
 
-	public int size = 20;		// 页默认大小
-	public int total;			// 总记录数
-	public int currentPage;		// 当前页数
+	public int record;			// 总记录数
+	public int pageSize;		// 页大小
 	public int totalPage;		// 总页数
+	public int currentPage;		// 当前页数
+	public int offset;			// 偏移量
 	
-	public int getSize() {
-		return size;
+	
+	public Page() {
+		pageSize = 20;
+		currentPage = 1;
+		offset = 0;
 	}
 	
-	public void setSize(int size) {
-		if (size <= 0 || size >= 100) {
-			size = this.size;
+	public int getRecord() {
+		return record;
+	}
+
+	public void setRecord(int record) {
+		this.record = record;
+	}
+	
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		if (pageSize <= 0 || pageSize >= 100) {
+			pageSize = this.pageSize;
 		}
-		this.size = size;
+		this.pageSize = pageSize;
 	}
 	
-	public int getTotal() {
-		return total;
+	public int getTotalPage() {
+		int totalPage = (record % pageSize == 0) ? 
+				(record / pageSize) : (record / pageSize) + 1;
+		return totalPage;
 	}
-	
-	public void setTotal(int total) {
-		this.total = total;
-	}
-	
+
 	public int getCurrentPage() {
 		return currentPage;
 	}
@@ -37,12 +51,8 @@ public class Page {
 		this.currentPage = currentPage;
 	}
 
-	public int getTotalPage() {
-		return totalPage;
-	}
-
-	public void setTotalPage(int totalPage) {
-		this.totalPage = totalPage;
+	public int getOffset() {
+		return (this.currentPage - 1) / this.pageSize;
 	}
 	
 }

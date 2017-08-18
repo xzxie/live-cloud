@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-body{width: 100%;min-width: 1200px;margin: auto; background-color: #dddddd; color: #333; font: 15px/1.618 comic sans ms;}
+body{width: 100%;min-width: 1200px;margin: auto; background-color: #dddddd; color: #333; font-family: initial;}
 
 .width50{width: 50px;}
 .width60{width: 60px;}
@@ -16,6 +16,23 @@ body{width: 100%;min-width: 1200px;margin: auto; background-color: #dddddd; colo
 .width190{width: 190px;}
 .width200{width: 200px;}
 
+input[type=text], input[type=password]{height: 30px; width: 170px; margin-left: 5px; border: 1px solid #ccc; color: #222;padding: 0 0 0 3px;}
+input[type=text]:focus, input[type=password]:focus{height: 30px; width: 170px; margin-left: 5px; border: 1px solid #ccc; color: #222;padding: 0 0 0 3px;border-color: #4d90fe; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(77, 144, 254, 0.6);outline: 0 none;}
+.input100{width: 100px;}
+.input120{width: 120px;}
+.input150{width: 150px;}
+.input180{width: 180px;}
+.input200{width: 200px;}
+
+textarea{border: 1px solid #ccc; color: #222;padding: 0 0 0 3px;}
+textarea:focus{border: 1px solid #ccc; color: #222;padding: 0 0 0 3px;border-color: #4d90fe; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(77, 144, 254, 0.6);}
+
+.select100{width: 100px;}
+.select120{width: 120px;}
+.select150{width: 150px;}
+.select180{width: 180px;}
+.select200{width: 200px;}
+
 .bold{font-weight: bold;}
 
 .black{color: black;}
@@ -26,16 +43,18 @@ body{width: 100%;min-width: 1200px;margin: auto; background-color: #dddddd; colo
 .align-center{text-align: center;}
 .align-left{text-align: left;}
 .align-right{text-align: right;}
-.search-btn{background-color: #38f; border: 1px solid #38f;color: white; width: 80px; padding: 3px 15px; cursor: pointer;color: white;}
+.search-btn{background-color: #38f; border: 1px solid #38f;color: white; width: 80px; padding: 3px 15px; cursor: pointer;border-radius: 3px; cursor: pointer;}
+.btn-orange{background-color: orange; border: 1px solid orange;color: white; width: 80px; padding: 3px 15px; cursor: pointer;border-radius: 3px; cursor: pointer;}
 
 
 .container{margin: auto;}
 
-.top-container{background: rgba(0, 0, 0, 0) url("/static/image/admin/top-bg.jpg") no-repeat scroll 0 0 / cover;margin: auto 3px auto auto;height: 100px;color: white;opacity: 0.8;}
-.top-container .top-container-left{margin: auto;float: left;}
+.top-container{background: rgba(0, 0, 0, 0) url("/static/image/admin/top-bg.jpg") no-repeat scroll 0 0 / cover;/*background: #004a7c;*/margin: auto 3px auto auto;height: 100px;color: white;opacity: 0.8;}
+.top-container .top-container-left{margin: 30px 10px 30px 500px;float: left;}
+.top-container .top-container-left a{text-decoration: none;font-size: 25px;color: white;}
 .top-container .top-container-right{margin: auto;float: right;width: 300px;}
 .top-container .top-container-right div{float: right; clear: both;margin: 3px 10px 0px 0px;}
-.top-container .top-container-right a{color: red;}
+.top-container .top-container-right a{color: red;font-size: 14px;text-decoration: none;}
 
 .body-container{margin: 2px auto;}
 
@@ -58,23 +77,29 @@ body{width: 100%;min-width: 1200px;margin: auto; background-color: #dddddd; colo
 .content-container .body form .export{}
 .content-container .body .query-table{width: 100%; border-collapse: collapse; font-size: 14px; table-layout: fixed;}
 .content-container .body .query-table tr td{border: 1px solid #fff;padding: 8px 0;text-align: left;height: 35px;line-height: 35px;white-space: nowrap;}
+.content-container .body .query-table tr td.desc{text-align: right;padding-right: 10px;}
 .content-container .body .query-table tr td label{font-weight: bold;}
-.content-container .body .query-table tr td input{height: 30px; width: auto; margin-left: 5px; border: 1px solid #ccc; color: #222;padding: 0 0 0 3px;}
+.content-container .body .query-table tr td input{height: 30px; width: 170px; margin-left: 5px; border: 1px solid #ccc; color: #222;padding: 0 0 0 3px;}
 .content-container .body .query-table tr td input:focus{border-color: #4d90fe; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(77, 144, 254, 0.6);outline: 0 none;}
 .content-container .body .query-table tr td input[type=button]{width: 100px; border: 0px; border-radius: 3px; cursor: pointer;color: white;}
 .content-container .body .query-table tr td input[class=search]{background-color: #38f;color: white;}
-.content-container .body .query-table tr td select{height: 30px; width: 80px; background: #fff; border: 1px solid #ccc;}
-.content-container .body .query-table tr td select:focus{border-color: #4d90fe; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(77, 144, 254, 0.6);outline: 0 none;}
+.content-container .body tr td select{height: 30px; width: 170px; margin-left: 5px; background: #fff; border: 1px solid #ccc;}
+.content-container .body tr td select:focus{border-color: #4d90fe; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(77, 144, 254, 0.6);outline: 0 none;}
 
 .content-container .body .record-table{width: 100%; border-collapse: collapse; margin-top: 20px;}
 .content-container .body .record-table td{border-top: 1px dotted #ccc; padding: 35px 0 5px 5px;}
 .content-container .body .record-table td .record{color: red;}
 
 .content-container .body .result-table{width: 100%; border-collapse: collapse; font-size: 14px; margin: 0 auto 20px;table-layout: fixed;}
+.content-container .body .result-table a{text-decoration: none; color: #5fa6e5; border: 1px solid #5fa6e5; padding: 3px 5px; border-radius: 3px;}
+.content-container .body .result-table a:hover{color: #ffffff; background-color: #5fa6e5;}
 .content-container .body .result-table thead{background-color: #bbb;}
 .content-container .body .result-table tbody{}
 .content-container .body .result-table tr{}
 .content-container .body .result-table tr td{border: 1px solid #ccc;padding: 8px 0;text-align: center;}
 .content-container .body .result-table tr th{border: 1px solid #ccc;padding: 8px 0;text-align: center; background-color: #f0f0f0;}
+
+.content-container .body .page-table{width: 100%;}
+.content-container .body .page-table div{float: right;margin-top: 30px;}
 
 #particles{position: absolute;top: 0px;left: 0px;;width: 100%;height: 100%;z-index: -1;}

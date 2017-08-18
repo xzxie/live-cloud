@@ -1,14 +1,14 @@
 10
 
 dir
-958
-svn://120.24.48.215/xiexiaozhang/web/main/src/java
+1061
+svn://120.24.48.215/xiexiaozhang/WebRoot/WEB-INF/classes
 svn://120.24.48.215
 
 
 
-2017-03-13T16:01:45.301646Z
-958
+2017-03-01T13:35:00.815389Z
+898
 xiexiaozhang
 
 
@@ -25,14 +25,4 @@ xiexiaozhang
 
 
 96ae923c-670c-46db-aab5-7aa51229e52b
-
-
-
-
-
-
-0
-
-com
-dir
 

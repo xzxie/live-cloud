@@ -13,7 +13,7 @@
 		.submit-table tr td{margin: 10px 5px;padding: 10px 5px;}
 		.input{border: 1px solid #ccc;color: #222;height: 30px;width: 220px;padding: 0 0 0 3px;}
 		.input:focus{border-color: #4d90fe;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(77, 144, 254, 0.6);}
-		.search-btn{width: 220px; padding: 5px 15px; border-radius:4px;}
+		.search-btn{width: 185px; padding: 5px 15px; border-radius:4px;}
 	</style>
   </head>
   
@@ -21,10 +21,7 @@
   	<div class="container">
 	  	<%@include file="/jsp/admin/top.jsp" %>
 	    <div class="body-container">
-	    	<jsp:include page="/jsp/admin/navi.jsp">
-	    		<jsp:param value="" name="dir"/>
-	    		<jsp:param value="" name="file"/>
-	    	</jsp:include>
+	    	<jsp:include page="/jsp/admin/navi.jsp"></jsp:include>
 	    	<div class="content-container">
 	    		<div class="title">
 	    			<span id="_dir_description_"></span> >> <span id="_file_description_"></span>

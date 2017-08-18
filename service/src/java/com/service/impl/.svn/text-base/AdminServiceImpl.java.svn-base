@@ -10,6 +10,11 @@ public class AdminServiceImpl implements AdminService {
 
 	private AdminDao adminDao;
 	
+	
+	public boolean login(Map<String, Object> params) {
+		return adminDao.login(params);
+	}
+	
 	public List<Map<String, Object>> getCategoryList(Map<String, Object> params) {
 		return adminDao.getCategoryList(params);
 	}
@@ -19,6 +24,7 @@ public class AdminServiceImpl implements AdminService {
 	public int insertCategory(Map<String, Object> params) {
 		return adminDao.insertCategory(params);
 	}
+	
 	
 	public List<Map<String, Object>> getSysUserList(Map<String, Object> param) {
 		return adminDao.getSysUserList(param);
@@ -33,6 +39,7 @@ public class AdminServiceImpl implements AdminService {
 		return adminDao.updateSysUserPwd(param);
 	}
 	
+	
 	public List<Map<String, Object>> getUserList(Map<String, Object> param) {
 		return adminDao.getUserList(param);
 	}
@@ -41,6 +48,22 @@ public class AdminServiceImpl implements AdminService {
 	}
 	public int insertUser(Map<String, Object> param) {
 		return adminDao.insertUser(param);
+	}
+	
+	
+	public List<Map<String, Object>> getPackageList(Map<String, Object> param) {
+		return adminDao.getPackageList(param);
+	}
+	public int updarePackage(Map<String, Object> param) {
+		return adminDao.updarePackage(param);
+	}
+	public int insertPackage(Map<String, Object> param) {
+		return adminDao.insertPackage(param);
+	}
+	
+	
+	public List<Map<String, Object>> getOrderList(Map<String, Object> param) {
+		return adminDao.getOrderList(param);
 	}
 	
 	

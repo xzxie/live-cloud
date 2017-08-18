@@ -13,37 +13,48 @@
   	<div class="container">
 	  	<%@include file="/jsp/admin/top.jsp" %>
 	    <div class="body-container">
-	    	<jsp:include page="/jsp/admin/navi.jsp">
-	    		<jsp:param value="" name="dir"/>
-	    		<jsp:param value="" name="file"/>
-	    	</jsp:include>
+	    	<jsp:include page="/jsp/admin/navi.jsp"></jsp:include>
 	    	<div class="content-container">
 	    		<div class="title">
 	    			<span id="_dir_description_"></span> >> <span id="_file_description_"></span>
 	    		</div>
+	    		<!-- 填充部分 -->
 	    		<div class="body">
 	    			<table class="query-table">
 	    			<form method="get" action="/admin/sysUser.do" id="form">
 	    				<input type="hidden" class="input" name="file_id" value="${file_id }" id="file_id" />
 	    				<tr>
-	    					<td>
+	    					<td class="desc">
 	    						<label>ID:</label>
+	    					</td>
+	    					<td>
 	    						<input type="text" name="id" id="id" />
 	    					</td>
-	    					<td>
+	    					<td class="desc">
 	    						<label>用户名:</label>
-	    						<input type="text" name="username" id="username" />
 	    					</td>
 	    					<td>
+	    						<input type="text" name="username" id="username" />
+	    					</td>
+	    					<td class="desc"></td>
+	    					<td>
+	    						<input type="button" name="search" class="search-btn" value="查 询" />
+	    					</td>
+	    				</tr>
+	    				<tr>
+	    					<td class="desc">
 	    						<label>状态:</label>
+	    					</td>
+	    					<td colspan="3">
 	    						<select name="status" id="status">
 	    							<option value="">全部</option>
 	    							<option value="0">正常</option>
 	    							<option value="1">删除</option>
 	    						</select>
 	    					</td>
+	    					<td class="desc"></td>
 	    					<td>
-	    						<input type="button" name="search" class="search-btn" value="查 询" />
+	    						<input type="button" name="search" class="search-btn btn-orange" value="新 增" />
 	    					</td>
 	    				</tr>
 	    				</form>
@@ -87,10 +98,26 @@
 	    				</c:choose>
 	    				</tbody>
 	    			</table>
+	    			<table class="page-table">
+	    				<tr>
+	    					<td><div id="page"></div></td>
+	    				</tr>
+	    			</table>
 	    		</div>
+	    		<!-- //填充部分 -->
 	    	</div>
 	    </div>
     </div>
   </body>
   <%@include file="/jsp/admin/admincommonjs.jsp" %>
+  <script src="/static/js/laypage-v1.3/laypage.js"></script>
+  <script type="text/javascript">
+  	laypage({
+	  cont: $('#page'), //容器。值支持id名、原生dom对象，jquery对象,
+	  pages: 11, //总页数
+	  skip: true, //是否开启跳页
+	  skin: 'yahei', //加载内置皮肤，也可以直接赋值16进制颜色值，如:#c00
+	  groups: 5 //连续显示分页数
+	});
+  </script>
 </html>

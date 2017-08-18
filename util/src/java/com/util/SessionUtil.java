@@ -8,7 +8,12 @@ import javax.servlet.http.HttpSession;
 
 public class SessionUtil {
 
-	public static String key_adminUserinfo = "adminUserinfo";
+	// 前台
+	public static final String key_userinfo = "userinfo"; 
+	
+	// 后台
+	public static final String key_admin_userinfo = "adminUserinfo";
+	
 	
 	private HttpSession session;
 	public HttpSession getSession() {
@@ -42,13 +47,13 @@ public class SessionUtil {
 	
 	// 后台用户信息
 	public void setAdminUserinfo(HttpServletRequest request, Object value) {
-		this.setAttribute(request, key_adminUserinfo, value);
+		this.setAttribute(request, key_admin_userinfo, value);
 	}
 	public Map<String, Object> getAdminUserinfo(HttpServletRequest request) {
-		return (Map<String, Object>) this.getAttribute(request, key_adminUserinfo);
+		return (Map<String, Object>) this.getAttribute(request, key_admin_userinfo);
 	}
 	public void removeAdminUserinfo(HttpServletRequest request, String key) {
-		this.removeAttribute(request, key_adminUserinfo);
+		this.removeAttribute(request, key_admin_userinfo);
 	}
 	
 	

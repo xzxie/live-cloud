@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
+
+import com.util.CookieUtil;
+
 public class LoginFilter extends HttpServlet implements Filter {
 
 	private static final long serialVersionUID = 1L;
@@ -32,14 +36,13 @@ public class LoginFilter extends HttpServlet implements Filter {
 			
 			String url = httpRequest.getScheme()+"://"+httpRequest.getServerName();*/
 			
-			
 			filterChain.doFilter(httpRequest, httpResponse);
 		}catch (Exception ex) {
 			ex.printStackTrace();
 			filterConfig.getServletContext().log(ex.getMessage());
 		}
 	}
-
+	
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.filterConfig = filterConfig;
 	}

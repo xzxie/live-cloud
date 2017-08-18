@@ -1,9 +1,11 @@
 package com.dao.impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
@@ -13,6 +15,31 @@ import com.util.DBUtil;
 public class AdminDaoImpl implements AdminDao {
 
 	private static final Logger logger = Logger.getLogger(AdminDaoImpl.class);
+	
+	
+	public boolean login(Map<String, Object> params) {
+		String username = (String) params.get("username");
+		String password = (String) params.get("password");
+		
+		List<Object> paramList = new ArrayList<Object>();
+		StringBuilder sql = new StringBuilder("select * from t_admin_user where 1=1 ");
+		if (StringUtils.isNotBlank(username)) {
+			sql.append("and username = ? ");
+			paramList.add(username);
+		}
+		if (StringUtils.isNotBlank(password)) {
+			sql.append("and password = ? ");
+			paramList.add(password);
+		}
+		sql.append("and status = 0 ");
+		List<Map<String, Object>> list = DBUtil.executeQuery(sql.toString(), paramList.toArray());
+		
+		if (CollectionUtils.isNotEmpty(list)) {
+			return true;
+		}
+		return false;
+	}
+	
 	
 	public List<Map<String, Object>> getCategoryList(Map<String, Object> params) {
 		String id = (String) params.get("id");
@@ -177,6 +204,51 @@ public class AdminDaoImpl implements AdminDao {
 	}
 	public int insertUser(Map<String, Object> param) {
 		return -1;
+	}
+	 
+	
+	public List<Map<String, Object>> getPackageList(Map<String, Object> params) {
+		String id = (String) params.get("id");
+		String package_name = (String) params.get("package_name");
+		String package_description = (String) params.get("package_description");
+		String type = (String) params.get("type");
+		String status = (String) params.get("status");
+		
+		List<String> list = new ArrayList<String>();
+		StringBuilder sbsql = new StringBuilder("select * from t_package info where 1=1 ");
+		if (StringUtils.isNotBlank(id)) {
+			sbsql.append("and id = ? ");
+			list.add(id);
+		}
+		if (StringUtils.isNotBlank(package_name)) {
+			sbsql.append("and package_name like ? ");
+			list.add("%" + package_name + "%");
+		}
+		if (StringUtils.isNotBlank(package_description)) {
+			sbsql.append("and package_description like ? ");
+			list.add("%" + package_description + "%");
+		}
+		if (StringUtils.isNotBlank(type)) {
+			sbsql.append("and type = ? ");
+			list.add(id);
+		}
+		if (StringUtils.isNotBlank(status)) {
+			sbsql.append("and status = ? ");
+			list.add(id);
+		}
+		List<Map<String, Object>> resultList = DBUtil.executeQuery(sbsql.toString(), list.toArray());
+		return resultList;
+	}
+	public int updarePackage(Map<String, Object> param) {
+		return -1;
+	}
+	public int insertPackage(Map<String, Object> param) {
+		return -1;
+	}
+	
+	
+	public List<Map<String, Object>> getOrderList(Map<String, Object> param) {
+		return null;
 	}
 
 }

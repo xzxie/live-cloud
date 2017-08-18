@@ -6,10 +6,10 @@ enum SiteEnum{ main, blog, book, download, vpn}
 
 public class SeoUtil {
 
-	public static final String domain = "http://www.xiexiaozhang.com";
+	public static final String domain = "https://www.xiexiaozhang.com";
 	public static final String siteName = "云烟阁";
-	public static final String description = "云烟阁";
-	public static final String keywords = "云烟阁,江南烟雨";
+	public static final String description = "云烟阁,为直播而生";
+	public static final String keywords = "云烟阁";
 	
 	
 	public static final String getDescription(Enum site) {

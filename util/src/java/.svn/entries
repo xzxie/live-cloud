@@ -1,18 +1,18 @@
 10
 
 dir
-898
+1012
 svn://120.24.48.215/xiexiaozhang/util/src/java
 svn://120.24.48.215
 
 
 
-2017-03-01T13:35:00.815389Z
-898
+2017-03-24T01:13:25.928606Z
+1007
 xiexiaozhang
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -25,13 +25,6 @@ svn:special svn:externals svn:needs-lock
 
 
 96ae923c-670c-46db-aab5-7aa51229e52b
-
-
-
-
-
-
-0
 
 com
 dir

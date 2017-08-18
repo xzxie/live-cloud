@@ -9,5 +9,5 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
 <meta name="renderer" content="webkit" />
-<link rel="shortcut icon" href="/static/image/favicon.ico?v=<%=Constant.VERSION %>" />
-<link rel="stylesheet" type="text/css" href="/static/css/admin/admin.css?v=<%=Constant.VERSION %>">
+<link rel="shortcut icon" href="/static/image/favicon.ico?t=<%=Constant.VERSION %>" />
+<link rel="stylesheet" type="text/css" href="/static/css/admin/admin.css?t=<%=Constant.VERSION %>">

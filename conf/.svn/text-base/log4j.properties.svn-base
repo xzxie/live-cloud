@@ -1,7 +1,7 @@
 log4j.rootLogger=info, stdout,console
 
 log4j.appender.stdout=org.apache.log4j.DailyRollingFileAppender
-log4j.appender.stdout.File=d://var/log/xiexiaozhang/error/xiexiaozhang.log
+log4j.appender.stdout.File=/var/log/xiexiaozhang/error/xiexiaozhang.log
 log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
 log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %-17c{2} - %m%n
 log4j.appender.stdout.Append=true 
@@ -13,14 +13,14 @@ log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %-1
 #log4j.appender.console.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p [%t] %-17c{2} (%13F:%L) %3x - %m%n
 
 
-#vonibolog
+#xiexiaozhanglog
 log4j.additivity.forDebug = false
 log4j.logger.forDebug=debug,debugAppender,console
 #log4j.appender.debugAppender=org.apache.log4j.net.SocketAppender
 #log4j.appender.debugAppender.RemoteHost=192.168.3.1
 #log4j.appender.debugAppender.Port=8887
 log4j.appender.debugAppender=org.apache.log4j.DailyRollingFileAppender
-log4j.appender.debugAppender.File=d://var/log/xiexiaozhang/error/
+log4j.appender.debugAppender.File=/var/log/xiexiaozhang/error/
 log4j.appender.debugAppender.Append=true   
 log4j.appender.debugAppender.Threshold=debug   
 log4j.appender.debugAppender.layout=org.apache.log4j.PatternLayout   
