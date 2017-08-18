@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+/********************** 首页     ***********************/
+
+/** banner **/
+#section-banner{margin: auto;width: 100%;height: 100%;min-height: 600px;background-image: url("/static/image/banner-1.jpg");background-color: #f8f8f8;position: relative;}
+#section-banner #container-welcome{font-size: 23px;background-color: black;filter: alpha(opacity:4);opacity: 0.6;color: white;border: 1px solid white;padding: 10px 10px;border-radius: 4px;cursor: pointer;user-select: none;-moz-user-select: none;-khtml-user-select: none;position: absolute;right: 0;top: 0;bottom: 0;width: 700px;height: 220px;margin: 200px 300px;box-shadow: 0px 0px 24px rgba(228, 228, 228, 0.95);}
+#section-banner #container-welcome .header{margin: 10px 0px 20px 0px;}
+#section-banner #container-welcome .command-line{}
+#section-banner #container-welcome .input-span{color: #00ff00;}
+#section-banner #container-login{display: none;filter: alpha(opacity:4);color: white;border: 1px solid white;padding: 10px 10px;border-radius: 4px;position: absolute;right: 0;top: 0;bottom: 0;width: 230px;height: 250px;margin: 200px 150px;box-shadow: 0px 0px 24px rgba(228, 228, 228, 0.95);background: rgba(0, 0, 0, 0.65);}
+#section-banner #container-login div{margin: 20px 10px;}
+#section-banner #container-login input{background: white; width: 200px;height: 35px;padding: 5px;border: 2px solid white;}
+#section-banner #container-login input:focus{box-shadow: 0px 0px 4px rgba(128, 128, 128, 1);}
+#section-banner #container-login #login-btn{cursor: pointer;color: white;border: 1px solid white;background-color: #2d78f4;width: 200px;}
+#section-banner #container-login div .qq-phone-login{float: left;margin: 5px 0 5px 5px;}
+#section-banner #container-login div .reg{float: right;margin: 5px 15px 5px 0px;}
+
+.section{background-color:  #dbdbdd;margin: 20px 0px;clear: left;}
+.section .container-title{background-color: #fff; color: #999; text-align: center;padding: 20px 0 15px;}
+.section .container-title hr{width: 60%; border: 1px dotted #ccc;}
+.section .container-title .title{background: white; position: absolute; margin: -20px; padding: 0 20px; font-weight: bold;}
+.section .container{margin: auto;width: 1000px;}
+
+/** product **/
+#product{height: 640px; background-image: url("/static/image/banner-test.jpg");}
+
+/** cdn **/
+#cdn{height: 640px; background-image: url("/static/image/banner-test.jpg");}
+
+/** package **/
+#package{height: 640px; background-image: url("/static/image/banner-test.jpg");}
+
+/** client **/
+#client{height: 640px; background-image: url("/static/image/banner-test.jpg");}
+
+/** footer-navi **/
+#footer-navi{margin: 20px auto 0px;height: 400px;background: rgba(0, 0, 0, 0) url("/static/image/loading.gif") no-repeat fixed 50% 0 / cover;opacity: 0.65;background-image: url("/static/image/banner-footer.jpg");top: 0;left: -460px;}
+#footer-navi .container div{width: 23%; height: inherit; float: left; text-align: center; padding: 20px 8px;background: rgb(0,0,0,0.5); border: 1px solid white; min-height: 300px;border-top: 0; border-bottom: 0;}
+
+/********************** //首页 ***********************/

@@ -1,0 +1,50 @@
+<!DOCTYPE beans PUBLIC
+    "-//SPRING//DTD BEAN 2.0//EN"
+    "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:misc.properties</value>
+			</list> 
+		</property> 
+	</bean>
+	
+	<bean id="InternalPathMethodNameResolver" class="org.springframework.web.servlet.mvc.multiaction.InternalPathMethodNameResolver" />
+	
+	<bean id="viewResolver1" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean id="viewResolver3" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<property name="basename" value="views" />
+	</bean>
+	
+	<!-- URL and VIEW MAPPINGS -->
+	<bean id="urlMappingSearchDomain" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/app/*.do">indexController</prop>
+				<prop key="/user/*.do">userController</prop>
+				
+				
+				<prop key="/admin/*.do">adminController</prop>
+			</props>
+		</property>
+	</bean>
+	
+	
+	<bean id="indexController" class="com.web.main.IndexController">
+		<property name="userService" ref="userService" />
+	</bean>
+	<bean id="userController" class="com.web.main.UserController">
+		<property name="userService" ref="userService" />
+	</bean>
+	
+	<bean id="adminController" class="com.web.admin.AdminController">
+		<property name="userService" ref="userService" />
+		<property name="adminService" ref="adminService" />
+	</bean>
+	
+</beans>

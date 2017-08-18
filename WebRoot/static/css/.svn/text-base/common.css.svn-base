@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+/**************************************************/
+body{width: 100%;min-width: 1200px;margin: auto;color: white; font: 15px/1.618 comic sans ms;}
+a{text-decoration: none; color: white;}
+a:hover{text-decoration: none;}
+.font12{font-size: 12px;}
+.font13{font-size: 13px;}
+.font14{font-size: 14px;}
+.font15{font-size: 15px;}
+.font16{font-size: 16px;}
+.font17{font-size: 17px;}
+.font18{font-size: 18px;}
+.bold{font-weight: bold;}
+.radius2{border-radius: 2px;}
+.radius3{border-radius: 3px;}
+.radius5{border-radius: 5px;}
+.radius10{border-radius: 10px;}
+.radius20{border-radius: 20px;}
+.background-white{background: white;}
+.color-black{color: black;}
+.color-ccc{color: #cccccc;}
+
+.cur1{border-bottom: 2px solid white;}
+.cur2{border-bottom: 3px solid white;}
+
+
+/** header **/
+#header-navi{margin: auto;height: 50px;line-height: 50px; position: fixed; z-index: 999; width: 100%;margin: auto;/**background: linear-gradient(to right, #0a93d4, #00b4aa);**/}
+.header-navi-scroll{background: linear-gradient(to right, #0a93d4, #00b4aa); box-shadow: 0 3px 10px 1px rgba(224, 224, 224, 0.70);}
+#header-navi .header-logo{height: 50px;line-height: 50px; float: left;}
+#header-navi .header-logo .logo{padding: 16px 10px;float: left;}
+#header-navi .header-logo .logo img{width: 90px;height: 20px;}
+#header-navi .header-logo .title{float: right;}
+#header-navi .header-navi-detail{width: 550px; margin: auto; width: 550px;}
+#header-navi .header-navi-detail a{padding: 12px 10px; margin: 0px 15px;font-weight: bold;}
+#header-navi .header-login-reg{float: right; margin-right: 40px; position: absolute; right: 0px; top: 0px;}
+#header-navi .header-login-reg a.reg{font-size: 13px; color: white;border: 2px solid white; padding: 2px 10px; text-decoration: none; margin-right: 15px;}
+#header-navi .header-login-reg a.reg:hover{color: #272626; background: white;}
+#header-navi .header-login-reg a.login{font-size: 13px; color: #272626; background: white; border: 2px solid white; padding: 2px 10px; text-decoration: none; margin-right: 15px;}
+#header-navi .header-login-reg a.login:hover{color: #272626; background: white;}
+
+
+/** footer **/
+#footer{background: #272626;color: #73777a;border-top: 1px solid #272626;height: 40px;margin: auto;}
+#footer .container{height: 40px;line-height: 40px;}
+#footer a{}
+
+
+/** totop **/
+#totop{display: none;position: fixed;bottom: 50px; right: 40px;width: 51px;height: 51px; z-index: 100; cursor: pointer; background-image: url("/static/image/totop.png");background-position:50%  0%;}
+
+/**************************************************/
+
+
+
+/**************************************************/
+/**************************************************/

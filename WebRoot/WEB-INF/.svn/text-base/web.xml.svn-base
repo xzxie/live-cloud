@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	<display-name>xiexiaozhang</display-name>
+	
+	
+	<!-- 数据源配置 -->
+	<!-- classpath:projectx-datasource.xml -->
+	
+	<context-param>
+    	<param-name>contextConfigLocation</param-name>
+	    <param-value>
+			classpath:projectx-data.xml 
+			classpath:projectx-service.xml
+	    </param-value>
+    </context-param>
+    
+    <!-- listener -->
+    <listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.web.servlet.LoginOutListener</listener-class>
+	</listener>
+	
+	<!-- servlet -->
+	<servlet>
+	    <servlet-name>projectx</servlet-name>
+	    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+	    <servlet-name>captcha</servlet-name>
+	    <servlet-class>com.web.servlet.CaptchaServlet</servlet-class>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<!-- servlet-mapping -->
+	<servlet-mapping>
+	    <servlet-name>projectx</servlet-name>
+	    <url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	    <servlet-name>captcha</servlet-name>
+	    <url-pattern>/getimg.png</url-pattern>
+	</servlet-mapping>
+	
+	<!-- filter -->
+	<filter>
+		<filter-name>loginfilter</filter-name>
+		<filter-class>com.web.servlet.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>loginfilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- filter -->
+	<filter>
+		<filter-name>securitycheckfilter</filter-name>
+		<filter-class>com.web.servlet.SecurityCheck</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>securitycheckfilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+  		<filter-name>securitycheckfilter</filter-name>
+    	<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>charsetFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>charsetFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+    
+	<!-- Session Control -->
+	<session-config>
+    	<session-timeout>30</session-timeout>
+	</session-config>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/jsp/error/error.jsp</location>
+	</error-page>
+	<error-page>
+    	<exception-type>java.lang.Exception</exception-type>
+   		<location>/jsp/error/error.jsp</location>
+	</error-page>
+	
+  <welcome-file-list>
+    <welcome-file>i.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

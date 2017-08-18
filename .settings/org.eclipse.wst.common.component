@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="xiexiaozhang">
+        <wb-resource deploy-path="/" source-path="/WebRoot"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web/main/src/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web/admin/src/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/service/src/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/dao/src/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/util/src/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/conf"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/model/src/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/web/servlet/src/java"/>
+        <property name="context-root" value="/xiexiaozhang"/>
+        <property name="java-output-path" value="/xiexiaozhang/WebRoot/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>
