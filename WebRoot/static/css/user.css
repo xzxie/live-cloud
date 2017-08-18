@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+body{background: #ddd;font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;}
+
+.container{}
+.container-navi{float: left;width: 10%;min-height: 612px;height: 100%; overflow: scroll-y;background: #222d32;color: #eee;}
+.container-navi .logo{height: 60px;width: 100%;margin: 10px 0 0;border-bottom: 1px solid #555;}
+.container-navi .logo img{width: 90px;margin: 10px;}
+.container-navi .menu{min-height: 600px;background: black;}
+.container-navi .menu .function{padding: 20px; text-align: center;border-bottom: 1px solid #111;}
+.container-navi .menu .function:hover{background: #555;}
+.container-navi .menu .function .function-image{}
+.container-navi .menu .function .function-desc{height: 30px;line-height: 30px;}
+.select-panel{background: #555;}
+
+.container-body{float: left;width: 90%;height: 100%}
+
+.container-top{height: 70px;line-height: 70px;background: #3c8dbc;color: #eee;}
+.container-top .toggle{float: left;font-size: 2.5em;padding: 0 20px;}
+.container-top .toggle a:hover{color: #ccc;}
+.container-top .info{float: right;}
+.container-top .info ul{margin: 0px; padding: 0px;}
+.container-top .info ul li{float: left;padding: 0px 30px;cursor: pointer;list-style: none;}
+.container-top .info ul li:hover{background: black;}
+.container-top .info ul li img{width: 20px; height: 20px;border-radius: 20px;}
+
+
+.container-content{padding: 10px;min-height: 522px;}

@@ -1,0 +1,58 @@
+package com.test;
+
+public class Test {
+
+	
+	public static void main(String[] args) {
+		ThreadLocal<String> threadlocal = new ThreadLocal<String>(){
+			@Override
+			protected String initialValue() {
+				return "101";
+			}
+		};
+		
+		threadlocal.set("102");
+		threadlocal.set("103");
+		threadlocal.set("104");
+		
+		threadlocal.remove();
+		
+		System.out.println(threadlocal.get());
+		System.out.println(threadlocal.get());
+		
+		Thread thread = Thread.currentThread();
+		System.out.println(thread.getId());
+		System.out.println(thread.getName());
+		
+		test1();
+		test2();
+	}
+	
+	public static void test1() {
+		System.out.println(1111111);
+		
+		Thread thread = Thread.currentThread();
+		System.out.println(thread.getId());
+		System.out.println(thread.getName());
+	}
+	
+	public static void test2() {
+		
+		Thread thread = Thread.currentThread();
+		System.out.println(thread.getId());
+		System.out.println(thread.getName());
+		
+		Thread newThread = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				Thread thread = Thread.currentThread();
+				System.out.println(thread.getId());
+				System.out.println(thread.getName());
+			}
+		});
+		
+		newThread.start();
+	}
+
+}
