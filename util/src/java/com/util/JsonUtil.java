@@ -12,6 +12,10 @@ import com.model.UserBean;
 
 public class JsonUtil {
 
+	
+	public static final String MAP_KEY = "RESULT";
+	public static final String MAP_LIST = "RESULTLIST";
+	
 	/**
 	 * json 转 list
 	 */

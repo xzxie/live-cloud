@@ -5,6 +5,10 @@ import java.util.Map;
 
 public interface AdminService {
 
+	
+	// 用户登录
+	public boolean login(Map<String, Object> params);
+	
 	/**
 	 * 系统目录管理
 	 */
@@ -44,9 +48,13 @@ public interface AdminService {
 	/**
 	 * 套餐管理
 	 */
+	public List<Map<String, Object>> getPackageList(Map<String, Object> param);
+	public int updarePackage(Map<String, Object> param);
+	public int insertPackage(Map<String, Object> param);
 	
 	
 	/**
 	 * 订单管理
 	 */
+	public List<Map<String, Object>> getOrderList(Map<String, Object> param);
 }

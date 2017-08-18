@@ -24,6 +24,8 @@
 	</bean>
 	
 	<bean id="userDao" class="com.dao.impl.UserDaoImpl"></bean>
+	<bean id="packageDao" class="com.dao.impl.PackageDaoImpl"></bean>
 	<bean id="adminDao" class="com.dao.impl.AdminDaoImpl"></bean>
+	<bean id="pubDao" class="com.dao.impl.PubDaoImpl"></bean>
 	
 </beans>

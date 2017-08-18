@@ -1,17 +1,52 @@
 @CHARSET "UTF-8";
 
 body{background-color: #f7fafc; background-image: none;}
-#header-navi{background: rgba(0, 0, 0, 0) linear-gradient(to right, #0a93d4, #00b4aa) repeat scroll 0 0; box-shadow: 0 3px 10px 1px rgba(224, 224, 224, 0.7);}
-.cur1{border-bottom: 0px solid white;}
+#header-navi{/*background: rgba(0, 0, 0, 0) linear-gradient(to right, #0a93d4, #00b4aa) repeat scroll 0 0;*/background: rgba(0, 0, 0, 0) url("/static/image/nav-bg-transparent.png") repeat-x scroll 0 0; box-shadow: 0 3px 10px 1px rgba(224, 224, 224, 0.7);}
 
-.container{left: 0px; right: 0px; top: 0px; bottom: 0px; position: absolute; margin: auto; height: 50%; width: 480px; overflow: hidden; box-radius: 4px; box-shadow: 2px 3px 10px #999; background: rgb(0, 0, 0, 0.4);}
+.container{height: 450px; width: 1120px; margin: 200px auto;}
 
+/** 注册  **/
 .reg-container{}
+.reg-container .reg-login-bg{float: left;width: 600;margin: 0 50px;height: 100%;background-image: url("/static/image/login-bg.png");background-repeat: no-repeat;}
+.reg-container #reg-container-box{float: left;width: 350px;height: 96%;margin: 5px 50px 5px 0;box-shadow: 2px 3px 10px #999; background: rgb(0, 0, 0, 0.4);background: white;box-radius: 4px;}
+#reg-container-box #container-reg{display: block;filter: alpha(opacity:4);color: white;border: 1px solid white;border-radius: 4px;height: 430px;background: rgba(0, 0, 0, 0.65);}
+#reg-container-box #container-reg .input-box{margin: 17px 20px;text-align: center;}
+#reg-container-box #container-reg .icon{width: 30px;line-height: 24px;height: 24px;margin: 6px 3px 6px 1px;border-right: 1px solid #ddd;position:absolute;}
+#reg-container-box #container-reg .input-box hr{width: 30%;border-color: #888;}
+#reg-container-box #container-reg .input-box .socail-desc{padding: 3px;font-size: 12px;height: 20px;line-height: 15px;}
+#reg-container-box #container-reg input{background: white; width: 100%;height: 42px;padding: 0 0 0 34px;border: 2px solid white;}
+#reg-container-box #container-reg input:focus{box-shadow: 0px 0px 4px rgba(128, 128, 128, 1);}
+#reg-container-box #container-reg #login-btn{cursor: pointer;color: white;border: 1px solid #2d78f4;background-color: #2d78f4;width: 100%;padding: 0px;}
 
 
+/** 登录  **/
 .login-container{}
+.login-container .reg-login-bg{float: left;width: 600;margin: 0 50px;height: 100%;background-image: url("/static/image/login-bg.png");background-repeat: no-repeat;}
+.login-container #login-container-box{float: left;width: 350px;height: 96%;margin: 5px 50px 5px 0;box-shadow: 2px 3px 10px #999; background: rgb(0, 0, 0, 0.4);background: white;box-radius: 4px;}
+#login-container-box #container-login{display: block;filter: alpha(opacity:4);color: white;border: 1px solid white;border-radius: 4px;height: 430px;background: rgba(0, 0, 0, 0.65);}
+#login-container-box #container-login .input-box .login-desc{padding: 3px;font-size: 18px;height: 30px;line-height: 30px;}
+#login-container-box #container-login .input-box{margin: 17px 20px;text-align: center;}
+#login-container-box #container-login .icon{width: 30px;line-height: 24px;height: 24px;margin: 6px 3px 6px 1px;border-right: 1px solid #ddd;position:absolute;}
+#login-container-box #container-login .input-box hr{width: 30%;border-color: #888;}
+#login-container-box #container-login .input-box .socail-desc{padding: 3px;font-size: 12px;height: 20px;line-height: 15px;}
+#login-container-box #container-login input{background: white; width: 100%;height: 42px;padding: 0 0 0 34px;border: 2px solid white;}
+#login-container-box #container-login input:focus{box-shadow: 0px 0px 4px rgba(128, 128, 128, 1);}
+#login-container-box #container-login #login-btn{cursor: pointer;color: white;border: 1px solid #2d78f4;background-color: #2d78f4;width: 100%;padding: 0px;}
+#login-container-box #container-login .input-box .qq-phone-login{float: left;margin: 5px 0 5px 5px;}
+#login-container-box #container-login .input-box .reg{float: right;margin: 5px 15px 5px 0px;}
 
+#login-container-box #container-login div em{border: 1px solid;border-radius: 60px;width: 40px;height: 40px;display: inline-block;margin: 20px 20px 0;}
+#login-container-box #container-login div em.login-qq{background: rgba(0, 0, 0, 0) url("/static/image/user/login-social.png") repeat scroll 0 -30px / 200px 90px;}
+#login-container-box #container-login div em.login-qq:hover{background: rgba(0, 0, 0, 0) url("/static/image/user/login-social.png") repeat scroll  0 -85px / 200px 90px;border: 1px solid #2d78f4;}
+#login-container-box #container-login div em.login-weixin{background: rgba(0, 0, 0, 0) url("/static/image/user/login-social.png") repeat scroll -64px -30px / 200px 90px;}
+#login-container-box #container-login div em.login-weixin:hover{background: rgba(0, 0, 0, 0) url("/static/image/user/login-social.png") repeat scroll -64px -85px / 200px 90px;border: 1px solid #39ae2c;}
+#login-container-box #container-login div em.login-weibo{background-image: url("/static/image/user/login-weibo.png");background-position: 6px 7px;background-size: 30px 27px;background-repeat: no-repeat;}
+#login-container-box #container-login div em.login-weibo:hover{background-image: url("/static/image/user/login-weibo-hover.png");background-position: 6px 8px;border: 1px solid #e05244;}
 
 
 /** particles **/
 #particles{position: absolute;top: 0px;left: 0px;;width: 100%;height: 100%;z-index: -1;}
+
+
+/** footer **/
+.footer{float: left;text-align: center;margin: 5px 0;width: 100%;color: #aaa;font-family: initial;}

@@ -43,11 +43,26 @@ function toggleCate(parent_id){
 				}
 			},
 			error:function(r){
-				alert("网络错误....");
-				//window.location.href="/admin/index.do";
+				layer.open({
+					type: 1, //page层类型
+					area: ['400px', '200px'],
+					title: '提示',
+					shade: 0.6, //遮罩透明度
+					maxmin: false, //允许全屏最小化
+					anim: 0, //0-6的动画形式，-1不开启
+					content: '<div style="padding:50px;">当前为非登录状态.</div>'
+				});
+				window.location.href="/admin/index.do";
 			}
 		});
 	} else if (ul_file.has("li").length > 0) {
 		ul_file.toggle();
 	}
+}
+
+function getRequestURI() {
+	var requestUri = window.location.pathname;
+	var file_id = $("#file_id").val();
+	requestUri = requestUri + "?file_id=" + file_id;
+	return requestUri;
 }

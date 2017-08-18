@@ -1,18 +1,18 @@
 10
 
 dir
-899
+1012
 svn://120.24.48.215/xiexiaozhang/model
 svn://120.24.48.215
 
 
 
-2017-03-01T13:40:08.760296Z
-899
+2017-03-24T07:27:57.303331Z
+1008
 xiexiaozhang
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -25,13 +25,6 @@ svn:special svn:externals svn:needs-lock
 
 
 96ae923c-670c-46db-aab5-7aa51229e52b
-
-
-
-
-
-
-0
 
 src
 dir

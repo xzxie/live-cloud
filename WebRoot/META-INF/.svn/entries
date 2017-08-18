@@ -1,7 +1,7 @@
 10
 
 dir
-898
+1061
 svn://120.24.48.215/xiexiaozhang/WebRoot/META-INF
 svn://120.24.48.215
 
@@ -12,7 +12,7 @@ svn://120.24.48.215
 xiexiaozhang
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -25,13 +25,6 @@ svn:special svn:externals svn:needs-lock
 
 
 96ae923c-670c-46db-aab5-7aa51229e52b
-
-
-
-
-
-
-0
 
 MANIFEST.MF
 file
@@ -39,7 +32,7 @@ file
 
 
 
-2017-03-01T13:28:47.807000Z
+2017-03-26T17:01:19.807208Z
 d0e895251c05b9ea895dda3a15b060db
 2017-03-01T13:35:00.815389Z
 898

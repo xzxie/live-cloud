@@ -13,10 +13,7 @@
   	<div class="container">
 	  	<%@include file="/jsp/admin/top.jsp" %>
 	    <div class="body-container">
-	    	<jsp:include page="/jsp/admin/navi.jsp">
-	    		<jsp:param value="" name="dir"/>
-	    		<jsp:param value="" name="file"/>
-	    	</jsp:include>
+	    	<jsp:include page="/jsp/admin/navi.jsp"></jsp:include>
 	    	<div class="content-container">
 	    		<div class="title">
 	    			<span id="_dir_description_"></span> >> <span id="_file_description_"></span>
@@ -35,19 +32,21 @@
 	    						<input type="text" name="username" id="username" />
 	    					</td>
 	    					<td>
+	    						<input type="button" name="search" class="search-btn" value="查 询" />
+	    					</td>
+	    				</tr>
+	    				<tr>
+	    					<td>
 	    						<label>手机号:</label>
 	    						<input type="text" name="phone" id=""phone"" />
 	    					</td>
-	    					<td>
+	    					<td colspan="2">
 	    						<label>状态:</label>
 	    						<select name="status" id="status">
 	    							<option value="">全部</option>
 	    							<option value="0">正常</option>
 	    							<option value="1">删除</option>
 	    						</select>
-	    					</td>
-	    					<td>
-	    						<input type="button" name="search" class="search-btn" value="查 询" />
 	    					</td>
 	    				</tr>
 	    				</form>

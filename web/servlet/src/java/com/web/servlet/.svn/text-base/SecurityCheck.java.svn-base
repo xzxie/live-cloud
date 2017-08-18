@@ -20,7 +20,10 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.util.Constant;
+import com.util.DateUtil;
 import com.util.LocalCache;
+import com.util.WebUtil;
 
 public class SecurityCheck extends HttpServlet implements Filter {
 
@@ -40,19 +43,59 @@ public class SecurityCheck extends HttpServlet implements Filter {
 		HttpServletResponse httpResponse = (HttpServletResponse) response;
 		
 		String uri = httpRequest.getRequestURI();
-		if (StringUtils.isNotBlank(uri) && uri.startsWith("/admin/")) {
-			HttpSession session = httpRequest.getSession();
-			setCateList(session);
-			String file_id = request.getParameter("file_id");
-			setCateListCurrent(session, file_id);
-			checkAdminUser(httpRequest, httpResponse, uri);
+		HttpSession session = httpRequest.getSession();
+		
+		// 上班时段不可访问
+		boolean isWorkTime = false; //DateUtil.isWorkTime();
+		if (isWorkTime) {
+			request.getRequestDispatcher("/index.jsp").forward(httpRequest, httpResponse);
+			return;
 		}
+		
+		// 关闭网站
+		if (!"open".equals(Constant.site_open_close_switch) && !"/config.jsp".equals(uri)) {
+			request.getRequestDispatcher("/index.jsp").forward(httpRequest, httpResponse);
+			return;
+		}
+		
+		// scheme
+		if (WebUtil.isHttp(httpRequest)) {
+			session.setAttribute("scheme", "http");
+		} else if (WebUtil.isHttps(httpRequest)) {
+			session.setAttribute("scheme", "https");
+		}
+		
+		// 手机端
+		if (WebUtil.isPhone(httpRequest)) {
+			logger.error("=========================  mobile 访问  ==========================");
+			if (uri.equals("/")) {
+				request.getRequestDispatcher("/jsp/m/index.jsp").forward(httpRequest, httpResponse);
+				return;
+			}
+		}
+		
+		// 管理员后台
+		if (StringUtils.isNotBlank(uri) && uri.startsWith("/admin/")) {
+			putCateLevel1List_to_session(session);
+			String file_id = request.getParameter("file_id");
+			putCateListCurrentLevel2_to_session(session, file_id);
+			checkAdminUserLogin(httpRequest, httpResponse, uri);
+		}
+		
+		// 前台用户个人中心
+		/*if (StringUtils.isNotBlank(uri) && uri.startsWith("/user/") && !(uri.equals("/user/reg.do") || uri.equals("/user/login.do") || uri.equals("/user/logout.do"))) {
+			Map<String, Object> userinfo = (Map<String, Object>) session.getAttribute("userinfo");
+			if (MapUtils.isEmpty(userinfo)) {
+				request.getRequestDispatcher("/user/logout.do").forward(request, response);
+				return;
+			}
+		}*/
 		
 		filterChain.doFilter(httpRequest, httpResponse);
 	}
 	
 	// 初始化加载后台一级目录
-	private void setCateList(HttpSession session) {
+	private void putCateLevel1List_to_session(HttpSession session) {
 		if (session.getAttribute("adminCateList") == null) {
 			Map<String, Object> param = new HashMap<String, Object>();
 			param.put("status", "0");
@@ -63,16 +106,16 @@ public class SecurityCheck extends HttpServlet implements Filter {
 	}
 	
 	// 当前目录
-	private void setCateListCurrent(HttpSession session, String file_id) {
+	private void putCateListCurrentLevel2_to_session(HttpSession session, String file_id) {
 		session.setAttribute("file_id", file_id);
 		String jsonCategoryCurrent = LocalCache.getCategoryForCurrent(file_id);
 		session.setAttribute("jsonCategoryCurrent", jsonCategoryCurrent);
 	}
 	
 	// 检测是后台用户登录状态
-	private void checkAdminUser(HttpServletRequest httpRequest, HttpServletResponse response, String uri) {
+	private void checkAdminUserLogin(HttpServletRequest httpRequest, HttpServletResponse response, String uri) {
 		HttpSession session = httpRequest.getSession();
-		if (!"/admin/index.do".equals(uri)) {
+		if (!"/admin/index.do".equals(uri) && !"/admin/login.do".equals(uri) && !"/admin/logout.do".equals(uri)) {
 			Map<String, Object> adminUserinfo = (Map<String, Object>) session.getAttribute("adminUserinfo");
 			if (adminUserinfo == null) {
 				try {

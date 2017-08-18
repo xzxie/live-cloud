@@ -11,6 +11,8 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/model/src/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/web/servlet/src/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/cron/src/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test/src/java"/>
         <property name="context-root" value="/xiexiaozhang"/>
         <property name="java-output-path" value="/xiexiaozhang/WebRoot/WEB-INF/classes"/>
     </wb-module>

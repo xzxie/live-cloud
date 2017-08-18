@@ -14,11 +14,17 @@ import org.apache.commons.logging.LogFactory;
 
 import com.util.ImageUtil;
 
-
+// 自定义生成验证码
 public class CaptchaServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	Log logger = LogFactory.getLog(CaptchaServlet.class);
+	private static final Log logger = LogFactory.getLog(CaptchaServlet.class);
+	
+	@Override
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		this.doGet(request, response);
+	}
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,7 +37,7 @@ public class CaptchaServlet extends HttpServlet {
 		response.setDateHeader("Expires", 0);
 		response.setContentType("image/jpeg");
 		
-		String from = request.getParameter("from");
+		String ref = request.getParameter("ref");
 		
 		BufferedImage bufImg = ImageUtil.creatImage(request);
 		ImageIO.write(bufImg, "JPEG", response.getOutputStream());

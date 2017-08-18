@@ -16,6 +16,7 @@
 	    <param-value>
 			classpath:projectx-data.xml 
 			classpath:projectx-service.xml
+			classpath:projectx-quartz.xml
 	    </param-value>
     </context-param>
     
@@ -38,6 +39,14 @@
 	    <servlet-class>com.web.servlet.CaptchaServlet</servlet-class>
 	    <load-on-startup>1</load-on-startup>
 	</servlet>
+	<servlet>
+		<servlet-name>qrcode</servlet-name>
+		<servlet-class>com.web.servlet.QRCodeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>upload</servlet-name>
+		<servlet-class>com.web.servlet.FileUploadServlet</servlet-class>
+	</servlet>
 	
 	<!-- servlet-mapping -->
 	<servlet-mapping>
@@ -47,6 +56,14 @@
 	<servlet-mapping>
 	    <servlet-name>captcha</servlet-name>
 	    <url-pattern>/getimg.png</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>qrcode</servlet-name>
+		<url-pattern>/qrcode.png</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
 	</servlet-mapping>
 	
 	<!-- filter -->
@@ -59,7 +76,6 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	<!-- filter -->
 	<filter>
 		<filter-name>securitycheckfilter</filter-name>
 		<filter-class>com.web.servlet.SecurityCheck</filter-class>
@@ -70,6 +86,19 @@
 	</filter-mapping>
 	<filter-mapping>
   		<filter-name>securitycheckfilter</filter-name>
+    	<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>htmlcompressfilter</filter-name>
+		<filter-class>com.web.servlet.HtmlCompressFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>htmlcompressfilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+  		<filter-name>htmlcompressfilter</filter-name>
     	<url-pattern>*.do</url-pattern>
 	</filter-mapping>
 	
@@ -85,6 +114,7 @@
 		<filter-name>charsetFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
 	
     
 	<!-- Session Control -->

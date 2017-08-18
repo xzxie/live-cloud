@@ -11,6 +11,7 @@
 		.login_box{text-align: center; margin:200px 220px;}
 		.box{text-align: center; padding: 7px 0; clear: left;}
 		.login_box input{border: 1px solid #bbb; margin-left: 10px; height: 41px; border-radius:3px; color:#272626; padding: 0 10px;}
+		.login_box input:focus{margin-left: 10px; height: 41px; padding: 0 10px;}
 		.loginBtn{background-color: #0096df; border:1px solid #0096df; width:90px; border-radius:3px; color:white;}
 		.loginBtn:hover{background-color: #66cefd; border: 1px solid #66cefd; cursor: pointer;}
 		img{margin-left: 10px;border-radius: 3px;}
@@ -20,7 +21,7 @@
   <body>
   	<div class="login_box">
   		<div class="box" style="margin-bottom: 150px;"><a href="/admin/index.do" style="color: #999999;font-size: 30px;text-decoration: none;box-shadow: 0px 2px 20px 5px;border-radius: 5px;padding: 10px;"><%=SeoUtil.siteName %> - 后台管理</a></div>
-	    <form action="/admin/index.do" method="post" name="admin_form" onsubmit="return validateCode()">
+	    <form action="/admin/login.do" method="post" name="admin_form" onsubmit="return validateCode()">
 	    	<div class="box">
 		    	<input type="text" name="username" id="username" size="30" placeholder="用户名" autocomplete="off">
 		    	<input type="password" id="password" name="password" size="30" placeholder="密码" autocomplete="off">

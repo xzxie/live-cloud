@@ -10,7 +10,7 @@ import com.alibaba.fastjson.JSON;
 public class LocalCache {
 
 	
-	// 后台一级目录
+	// 后台一级目录(二级目录异步加载)
 	public static List<Map<String, Object>> getCategoryList(Map<String, Object> params) {
 		String level = (String) params.get("level");
 		String status = (String) params.get("status");

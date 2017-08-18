@@ -1,28 +1,40 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
+<%@ page import="com.util.Constant"%>
+<%@ page import="com.util.SeoUtil"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'index.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+    <title>帮助 - <%=SeoUtil.siteName %></title>
+	<jsp:include page="/include/meta.jsp"></jsp:include>
+	<link rel="stylesheet" type="text/css" href="<%@ page import="com.util.Constant"%>/static/css/common.css?t=<%=Constant.VERSION %>">
+	<link rel="stylesheet" type="text/css" href="<%@ page import="com.util.Constant"%>/static/css/page.css?t=<%=Constant.VERSION %>">
   </head>
   
   <body>
-    This is my JSP page. <br>
+  	<jsp:include page="/include/header.jsp"></jsp:include>
+  	
+  	<div class="container-help-search">
+  		<form action="/help/search.do" method="get" name="help-form" id="help-form">
+  			<div class="search-box">
+  				<input type="text" name="key" value="${key }" class="search-inp" placeholder="我们能帮你找到什么？在这查找答案" autocomplete="off" maxlength="255">
+  				<a href="javascript:void(0);" onclick="help.index.search()" class="search-btn">搜索</a>
+  			</div>
+  		</form>
+  	</div>
+	<div class="container-box">
+		<div class="box">
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+		<div class="box">
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+	</div>
+	
+	<jsp:include page="/include/commonjs.jsp"></jsp:include>
+	<script src="<%@ page import="com.util.Constant"%>/static/js/help.js?t=<%=Constant.VERSION %>" type="text/javascript"></script>
   </body>
 </html>

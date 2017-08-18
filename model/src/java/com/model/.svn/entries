@@ -1,7 +1,7 @@
 10
 
 dir
-1009
+1012
 svn://120.24.48.215/xiexiaozhang/model/src/java/com/model
 svn://120.24.48.215
 
@@ -12,7 +12,7 @@ svn://120.24.48.215
 xiexiaozhang
 
 
-svn:special svn:externals svn:needs-lock
+
 
 
 
@@ -25,47 +25,6 @@ svn:special svn:externals svn:needs-lock
 
 
 96ae923c-670c-46db-aab5-7aa51229e52b
-
-
-
-
-
-
-0
-
-SearchBean.java
-file
-
-
-
-
-2017-03-24T11:49:31.154000Z
-257516c00491467a08a7494637d4bfec
-2017-03-24T07:27:57.303331Z
-1008
-xiexiaozhang
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1480
 
 UserBean.java
 file
@@ -73,7 +32,7 @@ file
 
 
 
-2017-03-15T11:44:42.876000Z
+2017-03-26T17:01:19.260311Z
 14a1a99e0c9c10715d96a5cbe58c697f
 2017-03-15T02:53:10.654066Z
 967
@@ -103,4 +62,38 @@ xiexiaozhang
 
 admin
 dir
+
+SearchBean.java
+file
+
+
+
+
+2017-03-26T17:01:19.275933Z
+257516c00491467a08a7494637d4bfec
+2017-03-24T07:27:57.303331Z
+1008
+xiexiaozhang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1480
 
