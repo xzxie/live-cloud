@@ -1,7 +1,0 @@
-client_ID = 1570558682
-client_SERCRET = abac7f77e7b7f52f8786cbb4f69e81df
-redirect_URI = https://www.xiexiaozhang.com/user/login_weibo.do
-baseURL=https://api.weibo.com/2/
-accessTokenURL=https://api.weibo.com/oauth2/access_token
-authorizeURL=https://api.weibo.com/oauth2/authorize
-rmURL=https://rm.api.weibo.com/2/

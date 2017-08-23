@@ -1,9 +1,0 @@
-@CHARSET "UTF-8";
-
-#header-navi{background: rgb(0, 0, 0) url("/static/image/nav-bg-transparent.png") repeat-x scroll 0 0;}
-
-.solution-container{margin-top: 50px;}
-.solution-container .section{}
-.solution-container .section-card{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_face.png") no-repeat scroll 50% 50% / cover;}
-.solution-container .section-tip{}
-.solution-container .section-content{}

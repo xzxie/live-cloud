@@ -1,0 +1,14 @@
+/com/
+/.svn/
+/commons-logging.properties
+/config.properties
+/dubbo-consumer.xml
+/dubbo-provider.xml
+/dubbo.properties
+/log4j.properties
+/misc.properties
+/projectx-data.xml
+/projectx-datasource.xml
+/projectx-quartz.xml
+/projectx-service.xml
+/qqconnectconfig.properties
