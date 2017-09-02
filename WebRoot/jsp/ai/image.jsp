@@ -18,7 +18,16 @@
   	<jsp:include page="/include/header.jsp"></jsp:include>
   	
 	<div class="ai-container">
-		<div class="section section-card-image"></div>
+		<div class="section section-card-image">
+			<div class="introduce">
+				<div class="title">图像识别</div>
+				<div class="description">基于深度学习及大规模图像训练，准确识别图片中的物体类别、位置、置信度等综合信息</div>
+				<div>
+					<span><a href="">立即使用</a></span>
+					<span><a href="">技术文档</a></span>
+				</div>
+			</div>
+		</div>
 		<div class="section section-tip"></div>
 		<div class="section section-content"></div>
 		<div class="section section-content"></div>
@@ -27,4 +36,9 @@
 	</div>
 	<jsp:include page="/include/commonjs.jsp"></jsp:include>
   </body>
+  <script type="text/javascript">
+  $(document).ready(function() {
+  	$(".introduce").css({"margin-left": (_config.bodyWidth-$(".introduce").width())/2});
+  });
+  </script>
 </html>

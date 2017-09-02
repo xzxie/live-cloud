@@ -10,7 +10,7 @@
 .ai-container .section .introduce span{border: 3px solid #fff; padding: 5px; margin: 10px; height: 50px; line-height: 50px;}
 .ai-container .section .introduce span:hover{background: white; color: #666;}
 .ai-container .section .introduce span a{padding: 5px 30px;}
-.ai-container .section .introduce span a:hover{background: white; color: #666;}
+.ai-container .section .introduce span a:hover{background: white; color: #000;}
 /** 通用card **/
 .ai-container .section-card{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_face.png") no-repeat scroll 50% 50% / cover;}
 /** face **/
@@ -22,9 +22,9 @@
 /** voice **/
 .ai-container .section-card-voice{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_voice.png") no-repeat scroll 50% 50% / cover;}
 /** recommend **/
-.ai-container .section-card-recommend{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_image.png") no-repeat scroll 50% 50% / cover;}
+.ai-container .section-card-recommend{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_recommend.png") no-repeat scroll 50% 50% / cover;}
 /** machine **/
-.ai-container .section-card-machine{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_image.png") no-repeat scroll 50% 50% / cover;}
+.ai-container .section-card-machine{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_machine.png") no-repeat scroll 50% 50% / cover;}
 
 .ai-container .section-tip{font-size: 25px; font-weight: 800; margin: 50px 0 10px 20px; border-bottom: 2px silver;}
 .ai-container .section-content{margin: 40px 20px;}

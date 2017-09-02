@@ -18,7 +18,16 @@
   	<jsp:include page="/include/header.jsp"></jsp:include>
   	
 	<div class="ai-container">
-		<div class="section section-card-recommend"></div>
+		<div class="section section-card-recommend">
+			<div class="introduce">
+				<div class="title">推荐引擎</div>
+				<div class="description">利用基于内容、基于用户行为、基于社交关系网络等多种方法，实时为用户推荐其喜欢的商品或内容</div>
+				<div>
+					<span><a href="">立即使用</a></span>
+					<span><a href="">技术文档</a></span>
+				</div>
+			</div>
+		</div>
 		<div class="section section-tip"></div>
 		<div class="section section-content"></div>
 		<div class="section section-content"></div>
@@ -27,4 +36,9 @@
 	</div>
 	<jsp:include page="/include/commonjs.jsp"></jsp:include>
   </body>
+  <script type="text/javascript">
+  $(document).ready(function() {
+  	$(".introduce").css({"margin-left": (_config.bodyWidth-$(".introduce").width())/2});
+  });
+  </script>
 </html>
