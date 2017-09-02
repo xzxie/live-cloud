@@ -113,7 +113,13 @@ public class OCRUtil {
      */
     public static String handleRequest_general_basic(String filePath) {
     	try {
-            byte[] imgData = FileUtil.readFileByBytes(filePath);
+            byte[] imgData = null;
+            if (filePath.startsWith("http") || filePath.startsWith("https")) {
+            	imgData = FileUtil.readRemoteFileByBytes(filePath);
+            } else {
+            	imgData = FileUtil.readFileByBytes(filePath);
+            }
+            
             String imgStr = Base64Util.encode(imgData);
             String params = URLEncoder.encode("image", "UTF-8") + "=" + URLEncoder.encode(imgStr, "UTF-8");
             /**
@@ -146,6 +152,17 @@ public class OCRUtil {
         String filePath = "e:\\che4.jpg";// #####本地文件路径#####
         String result = OCRUtil.handleRequest_general_basic(filePath);
         System.out.println(result);
+        
+        filePath = "http://img.bss.csdn.net/201708301124264435.png";// #####远程文件路径#####
+        result = OCRUtil.handleRequest_general_basic(filePath);
+        System.out.println(result);
+        
+        JSONObject json = new JSONObject(result);
+        org.json.JSONArray jsonArray = json.getJSONArray("words_result");
+        System.out.println(jsonArray);
+        for (Object value : jsonArray.toList()) {
+        	System.out.println(value);
+        }
         //----------------------------requestUrl_general_basic---------------------------
 	}
 

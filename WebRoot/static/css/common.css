@@ -51,7 +51,7 @@ a:hover{text-decoration: none;}
 #header-navi .header-logo .logo img{width: 90px;height: 20px;}
 #header-navi .header-logo .title{float: right;}
 #header-navi .header-navi-detail{margin: auto;}
-#header-navi .header-navi-detail div.menu{float: left; color: white; max-width: 100px; min-width: 70px; text-align: center; padding: 0px 10px; margin: 0px 10px;font-weight: bold;cursor: pointer;}
+#header-navi .header-navi-detail div.menu{float: left; color: white; max-width: 100px; min-width: 50px; text-align: center; padding: 0px 10px; margin: 0px 10px;font-weight: bold;cursor: pointer;}
 
 #header-navi .header-navi-detail div.solution-menu-more{float: left; color: white; width: 75px; padding: 0px 10px; margin: 0px 15px;font-weight: bold;cursor: pointer;}
 #header-navi .header-navi-detail div.menu-more .solution-drop-box{clear: left; float: left; display: none; background: white;width: 380px;margin: 0 0 0 -150px;padding: 10px 0;box-shadow: 0 5px 15px #aaa;border-radius: 2px;cursor: default;}

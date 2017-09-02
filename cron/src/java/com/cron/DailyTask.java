@@ -1,5 +1,6 @@
 package com.cron;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import com.util.DBUtil;
 import com.util.DateUtil;
+import com.util.SeoUtil;
 
 
 
@@ -38,6 +40,8 @@ public class DailyTask {
 		DailyTask.login(begin_week, end);
 		DailyTask.login(begin_month, end);
 		
+		DailyTask.deleteAITempUploadFile();
+		
 		current = System.currentTimeMillis() - current;
 		logger.error(DailyTask.class.getCanonicalName() + ".execute()执行完毕..." + " 耗时：" + current);
 	}
@@ -54,5 +58,21 @@ public class DailyTask {
 		String sql_query = "select count(distinct(info.user_id)) num from t_user_login_log info where info.create_time > ? and info.create_time < ?";
 		List<Map<String, Object>> resultList = DBUtil.executeQuery(sql_query, new Object[]{begin, end});
 		int num = Integer.valueOf(resultList.get(0).get("num")+"");
+	}
+	
+	// 删除昨天AI上传的文件
+	public static void deleteAITempUploadFile() {
+		String today = DateUtil.getSysCurrentYearMonthDateStr();
+		String savePath = SeoUtil.domain + "/upload";
+		File file = new File(savePath);
+		if (file.isDirectory()) {
+			File[] files = file.listFiles();
+			for (File f : files) {
+				String filename = f.getName();
+				if (filename.startsWith(today)) {
+					f.delete();
+				}
+			}
+		}
 	}
 }

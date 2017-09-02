@@ -63,7 +63,7 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>upload</servlet-name>
-		<url-pattern>/upload</url-pattern>
+		<url-pattern>/uploadfile</url-pattern>
 	</servlet-mapping>
 	
 	<!-- filter -->

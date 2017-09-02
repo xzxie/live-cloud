@@ -33,6 +33,7 @@ dubbo发布服务(服务提供者),订阅服务(服务消费者),监控服务(mo
 	http://echarts.baidu.com
 	demo示例：http://echarts.baidu.com/echarts2/doc/example.html
 	api文档：http://echarts.baidu.com/echarts2/doc/doc.html
+5.文件上传(jquery-uploadify)	http://www.uploadify.com
 
 
 集成第三方：

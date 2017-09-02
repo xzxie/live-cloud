@@ -1,11 +1,23 @@
 package com.util;
 
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.apache.log4j.Logger;
 
 /**
  * 文件读取工具类
  */
 public class FileUtil {
+	
+	private static Logger logger = Logger.getLogger(FileUtil.class);
 
     /**
      * 读取文件内容，作为字符串返回
@@ -68,5 +80,39 @@ public class FileUtil {
                 bos.close();
             }
         }
+    }
+    
+    /**
+     * 从远程url读文件
+     */
+    public static byte[] readRemoteFileByBytes(String urlResource) {
+    	URL url = null;
+    	HttpURLConnection conn = null;
+    	InputStream is = null;
+		try {
+			url = new URL(urlResource);
+			conn = (HttpURLConnection)url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setConnectTimeout(5 * 1000);
+			is = conn.getInputStream();
+			
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			byte[] buffer = new byte[1024];
+			int len = 0;
+			while( (len = is.read(buffer)) != -1 ){
+				baos.write(buffer, 0, len);
+	        }
+			byte[] data = baos.toByteArray();
+			return data;
+		} catch (Exception e) {
+			logger.error("读取远程资源文件失败.", e);
+		} finally {
+			try {
+				is.close();
+			} catch (IOException e) {
+				logger.error("流关闭失败.", e);
+			}
+		}
+		return null;
     }
 }
