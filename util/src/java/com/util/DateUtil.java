@@ -14,7 +14,6 @@ public class DateUtil {
 	public static final String yyyyMMddHHmmss_series = "yyyyMMddHHmmss";
 	
 	
-	
 	public static String getDate(String formatter) {
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat(formatter);

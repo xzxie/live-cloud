@@ -58,6 +58,7 @@
   <script src="<%=Constant.STATIC_PREFIX %>/static/js/jquery-uploadify/jquery.uploadify.js?t=<%=Constant.VERSION %>" type="text/javascript"></script>
   <script type="text/javascript">
   $(document).ready(function() {
+  	$(".introduce").css({"margin-left": (_config.bodyWidth-$(".introduce").width())/2});
     $("#uploadify-btn").uploadify({
         'swf'       : '/static/js/jquery-uploadify/uploadify.swf',
         'uploader'  : '/uploadfile',

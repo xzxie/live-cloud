@@ -4,7 +4,7 @@
 
 .ai-container{}
 .ai-container .section{}
-.ai-container .section .introduce{position: absolute; text-align: center; color: #fff;width: 500px;margin: 0px 280px; padding: 100px;}
+.ai-container .section .introduce{position: absolute; text-align: center; color: #fff;width: 500px;margin-top: 100px;}
 .ai-container .section .introduce .title{font-size: 28px;padding: 5px; font-weight: 500;}
 .ai-container .section .introduce .description{padding: 5px;}
 .ai-container .section .introduce span{border: 3px solid #fff; padding: 5px; margin: 10px; height: 50px; line-height: 50px;}
@@ -20,7 +20,7 @@
 /** image **/
 .ai-container .section-card-image{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_image.png") no-repeat scroll 50% 50% / cover;}
 /** voice **/
-.ai-container .section-card-voice{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_image.png") no-repeat scroll 50% 50% / cover;}
+.ai-container .section-card-voice{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_voice.png") no-repeat scroll 50% 50% / cover;}
 /** recommend **/
 .ai-container .section-card-recommend{height: 400px; background: rgba(0, 0, 0, 0) url("/static/image/ai/banner_image.png") no-repeat scroll 50% 50% / cover;}
 /** machine **/
